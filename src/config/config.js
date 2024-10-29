@@ -1,18 +1,8 @@
-const mongoose = require("mongoose");
 
-
-const mongoURI =
-  "mongodb+srv://jasmin09:Jas21@esperfigueroa-backend2.hjfkr.mongodb.net/";
-
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(mongoURI);
-    console.log("Conectado a MongoDB Atlas");
-  } catch (error) {
-    console.error("Error al conectar a MongoDB Atlas", error);
-    process.exit(1);
-  }
+export const config = {
+  PORT: 3000,
+  MONGO_URL:
+    "mongodb+srv://Pedro2024:<User1>@cluster0.jkbawur.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  DB_NAME: "Users",
+  SECRET: "CoderCoder123",
 };
-
-module.exports = connectDB;
