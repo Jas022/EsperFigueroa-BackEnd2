@@ -1,0 +1,102 @@
+[
+    {
+        "title": "Pinceles",
+        "description": "Pinceles varios tamaños",
+        "price": 900,
+        "img": "Sin imagen",
+        "code": "01",
+        "stock": 25,
+        "category": "artistica",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Florero",
+        "description": "Florero cerámica",
+        "price": 2500,
+        "img": "Sin imagen",
+        "code": "02",
+        "stock": 25,
+        "category": "deco",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Maceta",
+        "description": "Maceta blanca con flores",
+        "price": 2000,
+        "img": "Sin imagen",
+        "code": "03",
+        "stock": 25,
+        "category": "deco",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Reloj",
+        "description": "Reloj de pared",
+        "price": 3000,
+        "img": "Sin imagen",
+        "code": "04",
+        "stock": 25,
+        "category": "deco",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Velas lavanda",
+        "description": "Velas aroma a lavanda",
+        "price": 1000,
+        "img": "Sin imagen",
+        "code": "05",
+        "stock": 25,
+        "category": "aromas",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Perlas Perfumadas",
+        "description": "Perlas con perfume a Jazmin",
+        "price": 1200,
+        "img": "Sin imagen",
+        "code": "06",
+        "stock": 25,
+        "category": "aromas",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Sahumerios",
+        "description": "Sahumerios surtidos",
+        "price": 900,
+        "img": "Sin imagen",
+        "code": "07",
+        "stock": 25,
+        "category": "aromas",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Maceta Verde",
+        "description": "Maceta ceramica verde con detalles",
+        "price": 3200,
+        "img": "Sin imagen",
+        "code": "08",
+        "stock": 25,
+        "category": "deco",
+        "status": true,
+        "thumbnails": []
+    },
+    {
+        "title": "Nuevo Producto",
+        "description": "Descripción del producto",
+        "price": 1234,
+        "img": "Imagen URL",
+        "code": "nuevo_codigo",
+        "stock": 10,
+        "category": "Categoría",
+        "status": true,
+        "thumbnails": [],
+        "id": null
+    }
+]

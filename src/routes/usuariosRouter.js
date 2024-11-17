@@ -1,19 +1,11 @@
-// src/routes/usuariosRouter.js
-
 import { Router } from "express";
+import { UsuariosController } from "../controller/usuariosController.js";
+
 
 const router = Router();
 
 
-const usuarios = [
-  { id: 1, nombre: "Juan" },
-  { id: 2, nombre: "Ana" },
-];
+router.get("/", UsuariosController.getUsuarios);
+router.post("/", UsuariosController.createUser);
 
-
-router.get("/", (req, res) => {
-  res.json(usuarios); 
-});
-
-
-export { router }; 
+export { router };
