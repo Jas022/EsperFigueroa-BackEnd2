@@ -1,23 +1,24 @@
-//import jwt from "jsonwebtoken";
-import { config } from "../config/config.js";
-//export const auth = (req, res, next) => {
-// console.log(req.cookies);
+import jwt from "jsonwebtoken";
+import { config } from "../config/config.js"; 
 
-// if (!req.cookies.tokenCookie) {
-//   res.setHeader("Content-Type", "application/json");
-//   return res.status(401).json({ error: `Unauthorized - no llega token` });
-// }
+export const verificaToken = (req, res, next) => {
+  const token = req.headers["authorization"]?.split(" ")[1]; 
 
-// let token = req.cookies.tokenCookie;
-// try {
-//   req.user = jwt.verify(token, config.SECRET);
-// } catch (error) {
-//   res.setHeader("Content-Type", "application/json");
-//   return res.status(401).json({ error: `${error.message}` });
-// }
+  if (!token) {
+    return res.status(403).json({ error: "No se proporcionó un token" });
+  }
 
-// next();
-//};
+  try {
+    
+    const decoded = jwt.verify(token, config.SECRET);
+    console.log(decoded);
+    req.user = decoded; 
+    next(); 
+  } catch (error) {
+    return res.status(401).json({ error: "Token no válido" });
+  }
+};
+
 
 export const auth = (permisos = []) => {
   return (req, res, next) => {
@@ -40,11 +41,9 @@ export const auth = (permisos = []) => {
 
     if (!permisos.includes(req.user.rol.toLowerCase())) {
       res.setHeader("Content-Type", "application/json");
-      return res
-        .status(403)
-        .json({
-          error: `No tiene privilegios suficientes para acceder al recurso solicitado`,
-        });
+      return res.status(403).json({
+        error: `No tiene privilegios suficientes para acceder al recurso solicitado`,
+      });
     }
 
     next();

@@ -5,7 +5,6 @@ import passport from "passport";
 import { config } from "./config/config.js";
 import cookieParser from "cookie-parser";
 import { router as productRouter } from "./routes/productRouter.js";
-//import { router as cartsRouter } from "./routes/cartRouter.js";
 import { router as sessionsRouter } from "./routes/sessionsRouter.js";
 import { ConnDB } from "../src/ConnDB.js";
 import { auth } from "./middleware/auth.js";
@@ -29,6 +28,8 @@ app.use("/api/ordenes", ordenesRouter);
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
+app.use("/usuarios", usuariosRouter);
+app.use("/api", productRouter);
 
 initPassport();
 app.use(passport.initialize());
@@ -38,6 +39,7 @@ app.use(express.static("./src/public"));
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/sessions", sessionsRouter);
+
 
 app.get('/',(req,res)=>{
     res.setHeader('Content-Type','text/plain');

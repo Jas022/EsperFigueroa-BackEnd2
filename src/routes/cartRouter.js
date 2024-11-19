@@ -5,11 +5,13 @@ import passport from "passport";
 const router = Router();
 
 router.get("/", CartController.getCarts);
+router.post("/", CartController.createCart);
 router.post("/", (req, res) => {
   console.log("Solicitud POST recibida");
   CartController.createCart(req, res);
 });
 router.get("/:cid", CartController.getCartById);
+router.get("/carts/:cid", CartController.getCartById);
 
 router.post(
   "/:cid/product/:pid",

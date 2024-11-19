@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { productModel } from "./models/productModel.js";
 
 export class ProductsMongoDAO {
@@ -21,7 +22,18 @@ export class ProductsMongoDAO {
     }
     return resultado;
   }
-  static async getProductById(id) {
-    return await productModel.findById(id).lean(); 
+
+static async getProductById(id) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new Error("ID no válido");
+    }
+
+    const product = await productModel.findById(id);
+    if (!product) {
+      throw new Error("Producto no encontrado");
+    }
+
+    return product.toJSON();
   }
+
 }
